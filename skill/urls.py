@@ -1,9 +1,9 @@
 from django.urls import include, path
 from rest_framework import routers
-from . import views
-
+from .views import SkillViewSet
+router = routers.DefaultRouter()
+router.register('', SkillViewSet)
 
 urlpatterns = [
-    path('', views.SkillList.as_view()),
-    path('<int:id>/', views.SkillDetail.as_view()),
+    path('', include(router.urls)),
 ]
