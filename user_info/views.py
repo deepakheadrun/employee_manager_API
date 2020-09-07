@@ -13,10 +13,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 class InfoViewSet(viewsets.ModelViewSet):
     queryset = Info.objects.all()
     serializer_class = InfoSerializer
-    lookup_field='user_id'
-    # filter_backends = [DjangoFilterBackend]
-
-    # filter_fields = ['user_id']
+ 
+    filter_backends = [DjangoFilterBackend]
+    filter_fields = ['user_id']
     # @action(detail=True, methods=['get'])
     # def get_byuser(self, request, user_id=None):
     #     try:
