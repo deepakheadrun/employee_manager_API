@@ -1,9 +1,9 @@
 from django.urls import include, path
 from rest_framework import routers
-from . import views
-
+from .views import ExperienceViewSet
+router = routers.DefaultRouter()
+router.register('', ExperienceViewSet)
 
 urlpatterns = [
-    path('', views.ExperienceList.as_view()),
-    path('<int:id>/', views.ExperienceDetail.as_view()),
+    path('', include(router.urls)),
 ]

@@ -1,9 +1,9 @@
 from django.urls import include, path
 from rest_framework import routers
-from . import views
-
+from .views import InterestedAreaViewSet
+router = routers.DefaultRouter()
+router.register('', InterestedAreaViewSet)
 
 urlpatterns = [
-    path('', views.InterestedAreaList.as_view()),
-    path('<int:id>/', views.InterestedAreaDetail.as_view()),
+    path('', include(router.urls)),
 ]
