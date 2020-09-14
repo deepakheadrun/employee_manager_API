@@ -8,4 +8,5 @@ class Role(models.Model):
 class UserRole(models.Model):
     userid = models.ForeignKey(User, on_delete=models.CASCADE)
     roleid = models.ForeignKey(Role, on_delete=models.CASCADE)
-    
+    def __str__(self):
+        return self.userid
