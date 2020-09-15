@@ -14,5 +14,5 @@ class Info(models.Model):
     career_goal = models.TextField(blank=True)
     image= models.ImageField(upload_to ='uploads/',blank=True)
     def __str__(self):
-        return self.employee_id
+        return self.user_id
    
